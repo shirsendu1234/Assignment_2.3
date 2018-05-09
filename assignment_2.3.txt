@@ -1,0 +1,26 @@
+df1=data.frame(Custid=c(1:6),Product=c(rep("TV",3),rep("Radio",3)))
+df2=data.frame(Custid=c(2,3,6),state=c(rep("Texus",2),rep("NYC",1)))
+1)
+merge(x = df1, y = df2, by = "Custid", all.y = TRUE)
+
+
+
+> merge(x = df1, y = df2, by = "Custid", all.y = TRUE)
+  Custid Product state
+1      2      TV Texus
+2      3      TV Texus
+3      6   Radio   NYC
+==============================
+2)
+merge(x = df1, y = df2, by = "Custid", all = TRUE)
+
+
+> merge(x = df1, y = df2, by = "Custid", all = TRUE)
+  Custid Product state
+1      1      TV  <NA>
+2      2      TV Texus
+3      3      TV Texus
+4      4   Radio  <NA>
+5      5   Radio  <NA>
+6      6   Radio   NYC
+> 
